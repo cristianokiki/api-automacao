@@ -1,0 +1,13 @@
+package br.com.automacao.industrial.repository;
+
+import br.com.automacao.industrial.model.Endereco;
+
+public class PessoaRepositoryImpl implements PessoaRepositoryQuery{
+
+	@Override
+	public Endereco buscarEnderecoPessoa(Long idPessoa) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,26 @@
+package br.com.automacao.industrial.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.automacao.industrial.model.Funcionario;
+import br.com.automacao.industrial.model.PessoaFisica;
+import br.com.automacao.industrial.repository.PessoaRepository;
+
+@Service
+public class PessoaService {
+
+	@Autowired
+	private PessoaRepository pessoaRepository;
+	
+	public PessoaFisica salvar(Funcionario pessoa) {
+		return this.pessoaRepository.save(pessoa);
+	}
+	
+	public List<Funcionario> buscarTodasPessoas(){
+		return this.pessoaRepository.findAll();
+	}
+	
+}

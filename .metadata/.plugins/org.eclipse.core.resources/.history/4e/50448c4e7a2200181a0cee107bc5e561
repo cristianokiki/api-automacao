@@ -1,0 +1,9 @@
+package br.com.automacao.industrial.repository;
+
+import br.com.automacao.industrial.model.Endereco;
+
+public interface PessoaRepositoryQuery {
+
+	public Endereco buscarEnderecoUsuario(Long idPessoa);
+
+}

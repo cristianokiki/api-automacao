@@ -1,0 +1,19 @@
+package br.com.automacao.industrial.model;
+
+import javax.persistence.Column;
+
+public class Usuario extends Funcionario {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Column(name= "login")
+	private String usuario;
+	
+	@Column(name = "senha")
+	private String senha;
+	
+	
+}

@@ -1,0 +1,16 @@
+#============================
+#Altera nome de objeto modelo
+#============================
+pessoa.nome=Nome
+pessoa.cpfCnpj=CPF/CNPJ
+pessoa.email=Email
+pessoa.telefone=Telefone
+pessoa.celular=Celular
+pessoa.dataCadastro=Data de Cadastro
+pessoa.ativo=Ativo
+pessoa.endereco=Endere\u00E7o
+
+
+cargo.codigo=C\u00F3digo
+cargo.descricao=Descri\u00E7ao
+cargo.salario=Sal\u00E1rio

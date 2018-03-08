@@ -1,0 +1,4 @@
+javax.validation.constraints.NotEmpty.message={0} n\u00E3o pode ser vazio.
+javax.validation.constraints.NotNull.message={0} \u00E9 obrigat\u00F3rio(a).
+javax.validation.constraints.Size.message=Tamanho do atributo {0} deve estar entre {min} e {max} caracteres.
+javax.validation.constraints.Size.message=Tamanho do atributo {0} foi excedido, m\u00E1ximo de {max} caracteres permitidos.

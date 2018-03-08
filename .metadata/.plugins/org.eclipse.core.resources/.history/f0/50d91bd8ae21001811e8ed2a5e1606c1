@@ -1,0 +1,148 @@
+package br.com.automacao.industrial.model;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@Table(name = "PESSOA")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "TIPO")
+public abstract class Pessoa implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "CODIGO")
+	private Long id;
+
+	@NotNull
+	@NotEmpty
+	@Size(min = 3, max = 100)
+	@Column(name = "NOME", nullable = false, length = 100)
+	private String nome;
+
+	@Size(max = 14)
+	@NotNull
+	@Column(name = "CPF_CNPJ", nullable = false, length = 14)
+	private String cpfCnpj;
+
+	@Size(max = 100)
+	@Column(name = "EMAIL", nullable = true, length = 100)
+	private String email;
+
+	@Column(name = "TELEFONE", length = 14)
+	private Long telefone;
+
+	@Column(name = "CELULAR", length = 14)
+	private Long celular;
+
+	@Column(name = "DATA_CADASTRO")
+	private LocalDate dataCadastro;
+
+	@Column(name = "ATIVO", nullable = false)
+	private Boolean ativo;
+
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	//@JsonIgnore
+	@NotNull
+	@JoinColumn(name = "ID_ENDERECO", nullable = false)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private Endereco endereco;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCpfCnpj() {
+		return cpfCnpj;
+	}
+
+	public void setCpfCnpj(String cpfCnpj) {
+		this.cpfCnpj = cpfCnpj;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Long getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(Long telefone) {
+		this.telefone = telefone;
+	}
+
+	public Long getCelular() {
+		return celular;
+	}
+
+	public void setCelular(Long celular) {
+		this.celular = celular;
+	}
+
+	public LocalDate getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(LocalDate dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+
+	public Boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+
+}

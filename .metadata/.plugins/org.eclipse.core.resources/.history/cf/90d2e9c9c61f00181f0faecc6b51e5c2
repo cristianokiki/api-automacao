@@ -1,0 +1,16 @@
+package br.com.automacao.industrial.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "ENDERECO")
+public class Endereco {
+
+	private String cidade;
+	private String bairro;
+	private String logradouro;
+	private String uf;
+	private String complemento;
+	
+}

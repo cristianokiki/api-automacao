@@ -1,0 +1,17 @@
+1520181730033	Delete element
+1520181732090	Delete element
+1520188414244	Delete element
+1520300620899	Encapsulate field 'mensagemDesenvolvedor'
+1520300624922	Encapsulate field 'mensagemUsuario'
+1520390307935	Rename type 'PessoaRepository'
+1520390325607	Rename type 'PessoaResource'
+1520390340472	Rename type 'PessoaService'
+1520391904497	Rename field 'pessoaService'
+1520474136375	Rename resource 'V01__CREATE_TABLE_PESSOA_ENDERECO_CARGO.sql'
+1520474150241	Rename resource 'V02__CREATE_TABLE_PESSOA_ENDERECO_CARGO.sql'
+1520474161187	Rename resource 'V01__ADD_COLUNA_USUARIO_CRIA_TABELA_PERMISSAO.sql'
+1520475746999	Delete element
+1520476453502	Delete element
+1520477197829	Rename type 'PessoaRepositoryImpl'
+1520477307539	Move compilation units
+1520479908761	Infer generic type arguments

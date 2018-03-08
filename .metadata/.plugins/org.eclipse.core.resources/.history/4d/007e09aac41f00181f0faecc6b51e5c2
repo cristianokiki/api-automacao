@@ -1,0 +1,23 @@
+package br.com.automacao.industrial.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
+@DiscriminatorValue("PF")
+public class PessoaFisica {
+
+	@Size(max = 11)
+	@NotNull
+	@Column(name = "CPF_CNPJ", nullable = false, length = 11)
+	private Long cpf;
+
+	@Column(name = "DATA_NASCIMENTO")
+	private LocalDate dataNascimento;
+
+}

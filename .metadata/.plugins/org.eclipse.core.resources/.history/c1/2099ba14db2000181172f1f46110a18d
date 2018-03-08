@@ -1,0 +1,21 @@
+package br.com.automacao.industrial.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import br.com.automacao.industrial.model.Cargo;
+import br.com.automacao.industrial.repository.CargoRepository;
+
+@Service
+public class CargoService {
+
+	@Autowired
+	private CargoRepository cargoRepository;
+
+	public List<Cargo> buscarTodosCargos() {
+		return this.cargoRepository.findAll();
+	}
+
+}

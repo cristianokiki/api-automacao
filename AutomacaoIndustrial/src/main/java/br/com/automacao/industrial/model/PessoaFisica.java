@@ -1,0 +1,30 @@
+package br.com.automacao.industrial.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("PF")
+public class PessoaFisica extends Pessoa{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Column(name = "DATA_NASCIMENTO")
+	private LocalDate dataNascimento;
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	
+}

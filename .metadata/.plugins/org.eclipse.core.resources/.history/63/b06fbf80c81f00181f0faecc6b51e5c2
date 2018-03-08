@@ -1,0 +1,14 @@
+package br.com.automacao.industrial.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table( name = "CARGO")
+public class Cargo {
+
+	private Integer id;
+	private String descricao;
+	private Float salario;
+	
+}

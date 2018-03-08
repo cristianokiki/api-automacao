@@ -1,0 +1,17 @@
+package br.com.automacao.industrial.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("F")
+public class Funcionario {
+
+	
+	private LocalDate dataEntrada;
+	private LocalDate dataSaida;
+	private Cargo cargo;
+	
+}

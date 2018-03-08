@@ -1,0 +1,5 @@
+package br.com.automacao.industrial.model;
+
+public class Usuario {
+
+}

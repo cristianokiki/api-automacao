@@ -1,0 +1,26 @@
+package br.com.automacao.industrial.model;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
+@DiscriminatorValue("F")
+public class Funcionario {
+
+	@Column(name = "DATA_ENTRADA")
+	private LocalDate dataEntrada;
+
+	@Column(name = "DATA_SAIDA")
+	private LocalDate dataSaida;
+
+	@JoinColumn(name = "ID_CARGO")
+	@OneToOne(fetch = FetchType.LAZY)
+	private Cargo cargo;
+
+}

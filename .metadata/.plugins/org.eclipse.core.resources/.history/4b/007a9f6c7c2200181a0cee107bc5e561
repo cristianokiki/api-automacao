@@ -1,0 +1,22 @@
+package br.com.automacao.industrial.repository.pessoafisica;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.stereotype.Repository;
+
+import br.com.automacao.industrial.model.Endereco;
+
+@Repository
+public class PessoaFisicaRepositoryImpl implements PessoaFisicaRepositoryQuery{
+
+	@PersistenceContext
+	private EntityManager entityManager;
+	
+	@Override
+	public Endereco buscarEnderecoPessoa(Long idPessoa) {
+		
+		return null;
+	}
+
+}

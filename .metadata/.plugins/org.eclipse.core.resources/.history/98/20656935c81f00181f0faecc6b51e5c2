@@ -1,0 +1,44 @@
+package br.com.automacao.industrial.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name = "ENDERECO")
+public class Endereco {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "CODIGO")
+	private Long id;
+
+	@Column(name = "CIDADE", length = 50)
+	private String cidade;
+
+	@Column(name = "BAIRRO", length = 50)
+	private String bairro;
+
+	@Column(name = "LOGRADOURO", length = 50)
+	private String logradouro;
+
+	@Column(name = "UF", length = 2)
+	private String uf;
+
+	@Size(max = 100)
+	@Column(name = "COMPLEMENTO", length = 100)
+	private String complemento;
+
+	@Size(max = 14)
+	@Column(name = "NUMERO", length = 14)
+	private String numero;
+
+	@Size(max = 8)
+	@Column(name = "CEP", length = 8)
+	private Integer cep;
+
+}

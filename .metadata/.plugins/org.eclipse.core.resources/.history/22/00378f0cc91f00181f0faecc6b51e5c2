@@ -1,0 +1,32 @@
+package br.com.automacao.industrial.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+@Entity
+@Table(name = "CARGO")
+public class Cargo implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "CODIGO")
+	private Integer id;
+
+	@Size(min = 3, max = 50)
+	@Column(name = "DESCRICAO", length = 50)
+	private String descricao;
+
+	@Size(max = 8)
+	@Column(name = "SALARIO", precision = 2, scale = 2, length = 8)
+	private Float salario;
+
+}
